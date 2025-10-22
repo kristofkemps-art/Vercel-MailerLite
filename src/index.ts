@@ -8,11 +8,10 @@ const __dirname = path.dirname(__filename)
 const app = express()
 
 app.use(express.json())
-app.use("/", app.get('/myfile', (req, res) => {
+app.use("/", (req, res) => {
   // Adjust the path to your actual file location
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-)
 app.use("*", express.static("public"))
 
 
