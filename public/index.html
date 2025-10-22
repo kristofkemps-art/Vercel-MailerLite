@@ -212,7 +212,7 @@ who set targets and fuel life.</p>
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return say("That email doesn't look valid.");
 
       try {
-        const res = await fetch("/api/ml-subscribe", {
+        const res = await fetch("https://vercel-mailer-lite.vercel.app/mailer-lite", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: v, groupId: GROUP_ID })
