@@ -1,11 +1,14 @@
 import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import bodyParser from 'body-parser'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 const app = express()
+
+app.use(bodyParser);
 
 // Home route - HTML
 app.get('/', (req, res) => {
