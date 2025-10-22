@@ -7,7 +7,8 @@ const __dirname = path.dirname(__filename)
 
 const app = express()
 
-app.use(express.json());
+app.use(express.static("public"))
+app.use(express.json())
 
 // Home route - HTML
 app.get('/', (req, res) => {
