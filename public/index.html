@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;STFL | Set Targets, Fuel Life&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="STFL is coming soon — high-energy gear and culture for those who set targets and fuel life." /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--stfl-yellow:#ffea00; --stfl-orange:#ff9100; --stfl-magenta:#ff00aa; --stfl-blue:#118ab2;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg-0:#0a0f14; --bg-1:#0f1622; --text:#f3f6fb; --muted:#a8b1c2; --focus:var(--stfl-blue);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--border: color-mix(in oklab, white 8%, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card: color-mix(in oklab, var(--bg-1) 86%, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--cardw: 860px; --frame-pad: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>* { box-sizing: border-box; } html, body { height: 100%; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0; color: var(--text); font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-0);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-image:</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(60% 50% at 0% 0%, color-mix(in oklab, var(--stfl-blue) 28%, transparent) 0%, transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(55% 40% at 100% 10%, color-mix(in oklab, var(--stfl-magenta) 32%, transparent) 0%, transparent 75%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(65% 45% at 0% 100%, color-mix(in oklab, var(--stfl-yellow) 35%, transparent) 0%, transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(60% 45% at 100% 100%, color-mix(in oklab, var(--stfl-orange) 32%, transparent) 0%, transparent 70%),</p>
+<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(120deg, rgba(255,255,255,0.02), rgba(255,255,255,0) 40%, rgba(0,0,0,0.15) 60%, rgba(255,255,255,0.015) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background-attachment: fixed; overflow-x: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body::before {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>content: "";</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: fixed; inset: -20vmax;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: conic-gradient(from 0deg at 50% 50%, var(--stfl-magenta) 0%, transparent 25%, var(--stfl-blue) 50%, transparent 75%, var(--stfl-yellow) 100%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: blur(100px); opacity: .10; animation: stfl-spin 80s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>pointer-events: none; mix-blend-mode: screen;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@keyframes stfl-spin { to { transform: rotate(1turn); } }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(8px);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: color-mix(in oklab, var(--bg-0) 70%, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid color-mix(in oklab, white 7%, transparent); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header .container { width: min(100vw, calc(var(--cardw) + 2 * var(--frame-pad))); margin: 0 auto; padding: 0 var(--frame-pad); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.container { width: 100%; margin: 0 auto; padding: var(--frame-pad); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand { display:flex; align-items:center; gap:12px; text-transform:uppercase; font-weight:800; letter-spacing:.06em; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.brand .logo-type { font-size: 1.05rem; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn { appearance:none; border:0; cursor:pointer; border-radius:999px; padding:12px 20px; font-weight:700; letter-spacing:.02em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color:#0b0f14; background: linear-gradient(90deg, var(--stfl-yellow), var(--stfl-orange));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 8px 24px rgba(255,145,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .15s ease, box-shadow .2s ease, filter .15s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover { transform: translateY(-1px); filter: brightness(1.05); box-shadow: 0 10px 30px rgba(255,145,0,.45); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn-outline { color: var(--text); background: transparent; border: 1px solid color-mix(in oklab, var(--text) 22%, transparent); box-shadow: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-wrap { display:grid; place-items:center; min-height: calc(100dvh - 120px); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero { text-align: center; width: 100%; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.headline { font-size: clamp(1.5rem, 3.6vw, 2.3rem); line-height: 1.2; margin: 8px 0 10px; font-weight: 900; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.headline-soft {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block; font-size: clamp(1.2rem, 2.9vw, 1.85rem);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.2; font-weight: 800; color: color-mix(in oklab, var(--text) 82%, var(--muted) 18%);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px; margin-bottom: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.drop-line { margin: 0 auto 8px; font-size: clamp(1rem, 2.1vw, 1.15rem); color: var(--muted); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.subhead { color: var(--muted); font-size: clamp(1rem, 2vw, 1.1rem); margin: 0 0 18px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.underline { height: 5px; width: clamp(160px, 35vw, 360px); margin: 12px auto 0; border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--stfl-blue), var(--stfl-magenta), var(--stfl-orange), var(--stfl-yellow));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 8px 30px color-mix(in oklab, var(--stfl-magenta) 35%, transparent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card { background: var(--card); border:1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 20px; padding: 24px; box-shadow: 0 12px 40px rgba(0,0,0,.35);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: min(calc(100vw - 2 * var(--frame-pad)), var(--cardw)); margin: 0 auto; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card * { max-width: 100%; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo-stack { display:grid; justify-items:center; row-gap:0; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tagline-hero {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block; margin: -4px 0 14px 0; padding-bottom: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 900; letter-spacing: .055em; line-height: 1.18;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: clamp(1.7rem, 5.2vw, 3rem);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--stfl-yellow), var(--stfl-orange), var(--stfl-magenta), var(--stfl-blue));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>-webkit-background-clip: text; background-clip: text; color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>filter: drop-shadow(0 2px 10px rgba(0,0,0,.35));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>white-space: normal;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-logo { display:block; width: min(82%, 620px); height: auto; margin: 0 auto 0; filter: drop-shadow(0 18px 40px rgba(0,0,0,.35)); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.only-mobile { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.only-desktop { display: inline; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>section#subscribe { padding: 48px 0 90px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.ml-iframe { width: 100%; height: 520px; border: 0; border-radius: 16px; background: rgba(255,255,255,.02); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer { color: var(--muted); font-size: .9rem; padding: 24px 0 60px; text-align:center; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.socials { margin-top: 14px; display:flex; justify-content:center; gap:12px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.social { display:inline-flex; align-items:center; justify-content:center; padding:10px; border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: color-mix(in oklab, var(--bg-1) 50%, transparent); border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .15s ease, filter .2s ease; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.social:hover { transform: translateY(-1px) scale(1.04); filter: brightness(1.1); }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.social svg { width: 28px; height: 28px; display:block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 480px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.only-mobile { display: inline; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.only-desktop { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.drop-line { display: none; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.tagline-hero {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>font-size: clamp(1.1rem, 5.6vw, 1.55rem);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>letter-spacing: .04em; white-space: nowrap; padding-bottom: 8px; line-height: 1.22;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.hero-logo { width: min(86%, 78vw); }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.headline { font-size: clamp(1.2rem, 5vw, 1.6rem); line-height: 1.24; margin: 6px 0 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.headline-soft { font-size: clamp(1.05rem, 4.6vw, 1.42rem); line-height: 1.24; margin-top: 8px; margin-bottom: 10px; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.subhead { font-size: .96rem; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.ml-iframe { height: 640px; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="brand"&gt;&lt;div class="logo-type"&gt;#STFL&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-outline" data-scroll="#subscribe" aria-label="Jump to subscribe form"&gt;Subscribe&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;main class="hero-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo-stack"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="tagline-hero"&gt;# Set Targets, Fuel Life&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;img class="hero-logo" src="stfl-logo.png" alt="STFL brand logo large" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="headline"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="only-desktop"&gt;Whether it’s your first 10K, a marathon PR,&lt;br&gt;</p>
+<p class="p1">or the road to triathlon glory&lt;br&gt;</p>
+<p class="p1">&lt;span class="headline-soft"&gt;STFL fuels every stride, every stroke,&lt;br&gt;</p>
+<p class="p1">every target in sight.&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="only-mobile"&gt;Whether it’s your first 10K,&lt;br&gt;</p>
+<p class="p1">a marathon PR,&lt;br&gt;</p>
+<p class="p1">or the road to triathlon glory&lt;br&gt;</p>
+<p class="p1">&lt;br&gt;</p>
+<p class="p1">&lt;span class="headline-soft"&gt;STFL fuels every stride,&lt;br&gt;</p>
+<p class="p1">every stroke,&lt;br&gt;</p>
+<p class="p1">every target in sight.&lt;/span&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/h1&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="drop-line"&gt;High-energy athletic gear and culture built for those who set targets and fuel life.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="subhead only-mobile"&gt;High-energy gear and culture&lt;br&gt;</p>
+<p class="p1">built for those&lt;br&gt;</p>
+<p class="p1">who set targets and fuel life.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="underline"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-row" style="margin-top:18px; display:flex; justify-content:center; gap:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button class="btn" data-scroll="#subscribe"&gt;Subscribe&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="subscribe" class="container" aria-label="Subscribe"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 style="margin-top:0;"&gt;Get launch updates&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="subhead" style="text-align:left;margin:6px 0 14px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>This button opens your MailerLite signup page in a new tab.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;&lt;a class="btn" href="https://preview.mailerlite.io/forms/1867306/168820524945769478/share" target="_blank" rel="noopener"&gt;Open subscribe page&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="margin-top:12px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;iframe class="ml-iframe" src="https://preview.mailerlite.io/forms/1867306/168820524945769478/share" title="MailerLite signup form (embedded)"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;© STFL 2025 | Set Targets, Fuel Life&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="socials"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="social strava" href="https://www.strava.com/athletes/5339361" target="_blank" rel="noopener noreferrer" aria-label="Open Strava profile"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;path fill="#FC4C02" d="M6 18l6-12 6 12h-5l-1-2-1 2H6z"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Smooth scroll</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.querySelectorAll('[data-scroll]').forEach(b=&gt;b.addEventListener('click',()=&gt;{</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const t=document.querySelector(b.getAttribute('data-scroll'));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if(t) t.scrollIntoView({behavior:'smooth'});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
