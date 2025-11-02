@@ -260,7 +260,7 @@ header .bar {
 
 <style>
 
-/* --- Instagram brand color hover --- */
+/* --- Instagram hover color --- */
 .socials a[href*="instagram.com"] svg {
   fill: currentColor;
   transition: color 0.3s ease;
@@ -268,6 +268,16 @@ header .bar {
 .socials a[href*="instagram.com"]:hover {
   color: var(--stfl-magenta);
 }
+
+</style>
+
+<style>
+
+/* Instagram hover color */
+.socials a.instagram svg { fill: currentColor; transition: color .2s ease; }
+.socials a.instagram:hover { color: var(--stfl-magenta); }
+/* Strava icon: normalize to currentColor on hover for consistency */
+.socials a.strava:hover svg path { filter: brightness(1.15); }
 
 </style>
 </head>
@@ -316,7 +326,7 @@ who set targets and fuel life.</p>
     <section id="subscribe" class="container" aria-label="Subscribe">
       <div class="card">
         <h2 style="margin-top:0;">Get launch updates</h2>
-        <p class="subhead" style="text-align:left;margin:6px 0 14px;">Drop your email and we'll notify you when STFL goes live. No spam — just&nbsp;the&nbsp;good&nbsp;stuff.</p>
+        <p class="subhead" style="text-align:left;margin:6px 0 14px;">Drop your email and we'll notify you when STFL goes live. No spam — just the good stuff.</p>
         <form id="subscribe-form" novalidate>
           <label for="email">Email address</label>
           <input id="email" name="email" type="email" placeholder="you@email.com" required autocomplete="email"/>
@@ -332,17 +342,17 @@ who set targets and fuel life.</p>
     <div class="container">
       <div>© <span id="year"></span> STFL. All rights reserved.</div>
       <div class="socials">
-<a class="social" href="https://www.instagram.com/stflgear/" target="_blank" rel="noopener" aria-label="Instagram">
-  <svg viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.054 1.97.24 2.427.403.61.223 1.045.49 1.503.948.458.458.725.893.948 1.503.163.457.349 1.257.403 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.054 1.17-.24 1.97-.403 2.427a3.92 3.92 0 0 1-.948 1.503 3.92 3.92 0 0 1-1.503.948c-.457.163-1.257.349-2.427.403-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.054-1.97-.24-2.427-.403a3.92 3.92 0 0 1-1.503-.948 3.92 3.92 0 0 1-.948-1.503c-.163-.457-.349-1.257-.403-2.427C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.054-1.17.24-1.97.403-2.427.223-.61.49-1.045.948-1.503.458-.458.893-.725 1.503-.948.457-.163 1.257-.349 2.427-.403C8.416 2.175 8.796 2.163 12 2.163zm0 1.62c-3.16 0-3.532.012-4.778.069-1.03.047-1.59.218-1.962.362-.494.191-.847.418-1.219.79-.372.372-.598.725-.79 1.219-.144.372-.315.932-.362 1.962-.057 1.246-.069 1.618-.069 4.778s.012 3.532.069 4.778c.047 1.03.218 1.59.362 1.962.191.494.418.847.79 1.219.372.372.725.598 1.219.79.372.144.932.315 1.962.362 1.246.057 1.618.069 4.778.069s3.532-.012 4.778-.069c1.03-.047 1.59-.218 1.962-.362.494-.191.847-.418 1.219-.79.372-.372.598-.725.79-1.219.144-.372.315-.932.362-1.962.057-1.246.069-1.618.069-4.778s-.012-3.532-.069-4.778c-.047-1.03-.218-1.59-.362-1.962a3.082 3.082 0 0 0-.79-1.219 3.082 3.082 0 0 0-1.219-.79c-.372-.144-.932-.315-1.962-.362-1.246-.057-1.618-.069-4.778-.069zm0 3.783a5.434 5.434 0 1 1 0 10.867 5.434 5.434 0 0 1 0-10.867zm0 1.62a3.814 3.814 0 1 0 0 7.628 3.814 3.814 0 0 0 0-7.628zm5.77-2.004a1.267 1.267 0 1 1 0 2.534 1.267 1.267 0 0 1 0-2.534z"></path>
-  </svg>
-</a>
-
-        <a class="social strava" href="https://www.strava.com/" target="_blank" rel="noopener" aria-label="Open Strava">
+        <a class="social strava" href="https://www.strava.com/clubs/1801452" target="_blank" rel="noopener" aria-label="Open Strava" id="strava-link">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path fill="#FC4C02" d="M6 18l6-12 6 12h-5l-1-2-1 2H6z"/>
           </svg>
         </a>
+<a class="social instagram" href="https://www.instagram.com/stflgear/" target="_blank" rel="noopener" aria-label="Instagram">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 1.5A4 4 0 0 0 3.5 7.5v9A4 4 0 0 0 7.5 19h9a4 4 0 0 0 4-4v-9a4 4 0 0 0-4-4h-9zm4.5 3.5a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11zm0 1.5a4 4 0 1 0 0 8a4 4 0 0 0 0-8zm5-1a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5z"></path>
+  </svg>
+</a>
+
       </div>
     </div>
   </footer>
@@ -388,5 +398,36 @@ who set targets and fuel life.</p>
       }
     });
   </script>
+
+<script>
+(function() {
+  var link = document.getElementById('strava-link');
+  if (!link) return;
+  var clubPath = 'clubs/1801452';
+  var webURL = 'https://www.strava.com/clubs/1801452';
+  var iosURL = 'strava://' + clubPath;
+  var androidIntent = 'intent://' + clubPath + '#Intent;scheme=https;package=com.strava;S.browser_fallback_url=' + encodeURIComponent(webURL) + ';end';
+
+  link.addEventListener('click', function(e) {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    var isAndroid = /Android/i.test(ua);
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+    if (isAndroid) {
+      e.preventDefault();
+      window.location.href = androidIntent;
+      return false;
+    } else if (isIOS) {
+      e.preventDefault();
+      window.location.href = iosURL;
+      setTimeout(function() {
+        window.location.href = webURL;
+      }, 800);
+      return false;
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
